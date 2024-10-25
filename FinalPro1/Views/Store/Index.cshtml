@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "7-11相關查詢";
+}
+
+<h2>
+    1111757鍾嘉玲<br />
+    7-11相關查詢
+</h2>
+
+<form method="post" action="@Url.Action("StoreResult")">
+    <div class="form-group">
+        <label for="fCity" class="control-label col-md-2">城市</label>
+        <div class="col-md-10">
+            <select id="citys" name="citys">
+                @foreach (var item in ViewBag.Mylist)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="查詢" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+<br />
+<br />
+<form action="@Url.Action("StoreResult")" method="get">
+    <button type="submit" class="btn btn-outline-primary">全部查詢</button>
+</form>
+<br />
+<form action="@Url.Action("Discount")" method="get">
+    <button type="submit" class="btn btn-outline-success">好康優惠</button>
+</form>
+<p>請先登入才可查看！</p>
+<a asp-controller="Account" asp-action="Logout" class="btn btn-primary">登出</a>
+

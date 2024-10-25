@@ -1,0 +1,47 @@
+﻿@model FinalPro1.Models.Discount
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create</h1>
+
+<h4>Discount</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DIS_ID" class="control-label">活動代號</label>
+                <input asp-for="DIS_ID" class="form-control" />
+                <span asp-validation-for="DIS_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DIS_NAME" class="control-label">活動名稱</label>
+                <input asp-for="DIS_NAME" class="form-control" />
+                <span asp-validation-for="DIS_NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DIS_START" class="control-label">開始時間</label>
+                <input asp-for="DIS_START" class="form-control" />
+                <span asp-validation-for="DIS_START" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DIS_END" class="control-label">結束時間</label>
+                <input asp-for="DIS_END" class="form-control" />
+                <span asp-validation-for="DIS_END" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="新增" class="btn btn-primary" />
+                
+            </div>
+        </form>
+    </div>
+</div><br />
+<button class="btn btn-info" onclick="location.href='@Url.Action("Discount", "Store")'">回上頁</button>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

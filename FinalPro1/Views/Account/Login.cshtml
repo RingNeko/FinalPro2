@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["message"] != null)
+{
+    <script>alert('@TempData["message"]');</script>
+}
+
+<h2>帳號登入</h2>
+<h4>帳密:1111757(可新增修改刪除資料)</h4>
+<h4>帳密:1234(不可新增刪除修改)</h4>
+<form action="@Url.Action("Login")" method="post">
+    <p>帳號: @Html.TextBox("MEM_ACCOUNT", "", new { @class = "form-control" })</p>
+    <p>密碼: @Html.Password("MEM_PASSWORD", "", new { @class = "form-control" })</p>
+    <button type="submit" class="btn btn-info">登入</button>
+</form>
+<br />
+<button class="btn btn-success" onclick="location.href='@Url.Action("Index", "Store")'">回首頁</button>
+<br />
+
